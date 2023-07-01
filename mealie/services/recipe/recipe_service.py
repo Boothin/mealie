@@ -43,7 +43,7 @@ class RecipeService(BaseService):
         super().__init__()
 
     def _get_recipe(self, data: str | UUID, key: str | None = None) -> Recipe:
-        recipe = self.repos.recipes.by_group(self.group.id).get_one(data, key)
+        recipe = self.repos.recipes.get_one(data, key)
         if recipe is None:
             raise exceptions.NoEntryFound("Recipe not found.")
         return recipe

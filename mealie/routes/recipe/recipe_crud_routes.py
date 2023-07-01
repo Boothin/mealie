@@ -66,7 +66,7 @@ class JSONBytes(JSONResponse):
 class BaseRecipeController(BaseCrudController):
     @cached_property
     def repo(self) -> RepositoryRecipes:
-        return self.repos.recipes.by_group(self.group_id)
+        return self.repos.recipes
 
     @cached_property
     def cookbooks_repo(self) -> RepositoryGeneric[ReadCookBook, CookBook]:
